@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>د. نادية لطفي محمد العسال | باحثة تربوية</title>
+<link rel="preload" as="image" href="499919803_1104345385060120_91540.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Tajawal:wght@300;400;500;700&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -17,12 +20,12 @@
 --smooth:cubic-bezier(0.45,0.05,0.55,0.95);
 }
 [data-theme="light"] {
---gold:#7a5518;--gold-l:#a87320;--gold-d:#5a3d10;
---glow:rgba(122,85,24,.08);--glow2:rgba(122,85,24,.04);
---bg:#f9f6f0;--bg2:#fff;--bg3:#f1ebe1;
---txt:#120f08;--muted:#68594a;
---bdr:rgba(122,85,24,.16);--bdr2:rgba(122,85,24,.33);
---nav:rgba(249,246,240,.97);
+--gold:#c49b63;--gold-l:#d9b184;--gold-d:#a67c50;
+--glow:rgba(196,155,99,.15);--glow2:rgba(196,155,99,.08);
+--bg:#f5f3ee;--bg2:#e8e5df;--bg3:#efeee9;
+--txt:#2a251f;--muted:#756b5e;
+--bdr:rgba(196,155,99,.30);--bdr2:rgba(196,155,99,.45);
+--nav:rgba(245,243,238,.98);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--gold) var(--bg);}
@@ -30,6 +33,7 @@ html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--gold) var
 ::-webkit-scrollbar-track{background:var(--bg);}
 ::-webkit-scrollbar-thumb{background:linear-gradient(var(--gold-l),var(--gold),var(--gold-d));border-radius:4px;}
 ::selection{background:rgba(201,168,76,.18);color:var(--txt);}
+[data-theme="light"] ::selection{background:rgba(196,155,99,.28);color:var(--txt);}
 body{
 font-family:'Tajawal',sans-serif;
 background:var(--bg);color:var(--txt);
@@ -39,12 +43,16 @@ font-size:16px;line-height:1.8;
 body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
 background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='f'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23f)' opacity='.022'/%3E%3C/svg%3E");
 opacity:.28;}
+[data-theme="light"] body::before{opacity:.12;}
 
 #cursor-glow{
 position:fixed;width:320px;height:320px;
 background:radial-gradient(circle,rgba(201,168,76,.04) 0%,transparent 70%);
 border-radius:50%;pointer-events:none;z-index:1;
 transform:translate(-50%,-50%);transition:left .12s,top .12s;
+}
+[data-theme="light"] #cursor-glow{
+background:radial-gradient(circle,rgba(196,155,99,.09) 0%,transparent 70%);
 }
 #particles{position:fixed;inset:0;pointer-events:none;z-index:0;}
 .particle{
@@ -62,13 +70,13 @@ animation:particleFloat linear infinite;
 .tpill:hover{border-color:var(--gold);background:var(--glow2);}
 .ticon{width:15px;height:15px;transition:opacity .35s,transform .4s;flex-shrink:0;}
 .ticon path{fill:var(--gold);transition:fill .35s;}
-[data-theme="light"] .ticon path{fill:#3a2808;}
+[data-theme="light"] .ticon path{fill:var(--gold-d);}
 .tmoon{opacity:1;}.tsun{opacity:.28;transform:scale(.8);}
 [data-theme="light"] .tmoon{opacity:.28;transform:scale(.8);}
 [data-theme="light"] .tsun{opacity:1;transform:scale(1);}
 .ttrack{width:30px;height:16px;background:var(--bdr);border-radius:8px;position:relative;}
 .ttrack::after{content:'';position:absolute;top:2px;right:2px;width:12px;height:12px;background:var(--gold);border-radius:50%;box-shadow:0 1px 3px rgba(0,0,0,.4);transition:transform .35s cubic-bezier(.34,1.56,.64,1);}
-[data-theme="light"] .ttrack::after{transform:translateX(-14px);}
+[data-theme="light"] .ttrack::after{transform:translateX(-14px);background:var(--gold-d);}
 
 nav{position:fixed;top:0;width:100%;z-index:100;padding:1rem 5%;display:flex;justify-content:space-between;align-items:center;background:var(--nav);backdrop-filter:blur(24px) saturate(1.6);border-bottom:1px solid var(--bdr);transition:background .5s,border-color .5s;}
 nav::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0%,var(--gold) 30%,var(--gold-l) 50%,var(--gold) 70%,transparent 100%);opacity:.45;}
@@ -369,9 +377,10 @@ font-size:1.15rem;color:var(--gold);font-weight:700;font-style:italic;
 .gallery-item{position:relative;overflow:hidden;border-radius:8px;border:1px solid var(--bdr);transition:all .5s var(--expo);cursor:pointer;}
 .gallery-item::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(7,7,10,.85) 0%,transparent 60%);opacity:0;transition:opacity .4s;z-index:1;pointer-events:none;}
 .gallery-item:hover::before{opacity:1;}
-.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--expo);display:block;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--expo);display:block;will-change:transform;}
 .gallery-item:hover img{transform:scale(1.08);}
 .gallery-item:hover{border-color:var(--gold);box-shadow:0 15px 40px rgba(201,168,76,.3);transform:translateY(-8px);}
+img{image-rendering:auto;image-rendering:-webkit-optimize-contrast;}
 
 .lang-switch{transition:opacity .4s var(--expo),transform .4s var(--expo);}
 .lang-switch.switching{opacity:0;transform:scale(.96);}
@@ -454,7 +463,7 @@ font-size:1.15rem;color:var(--gold);font-weight:700;font-style:italic;
 </div>
 <div class="hvis">
 <div class="hero-img-wrap">
-<img src="https://i.postimg.cc/V6JJPm5C/499919803-1104345385060120-91540.png" alt="Dr. Nadia" class="hero-img">
+<img src="499919803_1104345385060120_91540.png" alt="Dr. Nadia" class="hero-img" loading="eager">
 <div class="hero-deco tl"></div>
 <div class="hero-deco br"></div>
 </div>
@@ -598,19 +607,16 @@ font-size:1.15rem;color:var(--gold);font-weight:700;font-style:italic;
 </div>
 <div class="gallery-grid">
 <div class="gallery-item reveal">
-<img src="https://i.postimg.cc/vB44wbcF/499926903-1104345348393457-10680.png" alt="Dr. Nadia Graduation">
+<img src="499926903_1104345348393457_10680.png" alt="Dr. Nadia Graduation" loading="lazy">
 </div>
 <div class="gallery-item reveal">
-<img src="https://i.postimg.cc/JnSG1vB6/499926903-1104345348393457-10680-(1).png" alt="PhD Ceremony">
+<img src="499919803_1104345385060120_91540.png" alt="Research Presentation" loading="lazy">
 </div>
 <div class="gallery-item reveal">
-<img src="https://i.postimg.cc/V6JJPm5C/499919803-1104345385060120-91540.png" alt="Research Presentation">
+<img src="499917605_1104345301726795_65289.png" alt="Academic Achievement" loading="lazy">
 </div>
 <div class="gallery-item reveal">
-<img src="https://i.postimg.cc/cLWtgp5t/499917605-1104345301726795-65289.png" alt="Academic Achievement">
-</div>
-<div class="gallery-item reveal">
-<img src="https://i.postimg.cc/zfJD852d/499874518-1104345265060132-61341.png" alt="Dr. Nadia at Ceremony">
+<img src="499874518_1104345265060132_61341.png" alt="Dr. Nadia at Ceremony" loading="lazy">
 </div>
 </div>
 </section>
@@ -731,9 +737,13 @@ const chatMessages = document.getElementById('chatMessages');
 let conversationHistory = [];
 
 chatBtn.addEventListener('click', () => {
+if (chatWindow.classList.contains('active')) {
+chatWindow.classList.remove('active');
+} else {
 chatWindow.classList.add('active');
 if (conversationHistory.length === 0) {
 showWelcomeMessage();
+}
 }
 });
 
@@ -932,7 +942,3 @@ obs.observe(item);
 </script>
 </body>
 </html>
-
-
-
-
